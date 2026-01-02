@@ -20,3 +20,17 @@ function ajouterLigne() {
     cellule1.textContent = "Nouvel Item";
     cellule2.textContent = Math.floor(Math.random() * 100);
 }
+function supprimerLigne(bouton) {
+    const ligne = bouton.parentElement.parentElement;
+    ligne.remove();
+    alert("Ligne supprimée !");
+}
+
+function modifierLigne(bouton) {
+    const ligne = bouton.parentElement.parentElement;
+    const nouvelleValeur = prompt("Entrez une nouvelle valeur :", ligne.cells[1].textContent);
+    if (nouvelleValeur !== null) {
+        ligne.cells[1].textContent = nouvelleValeur;
+        alert("Valeur mise à jour !");
+    }
+}
